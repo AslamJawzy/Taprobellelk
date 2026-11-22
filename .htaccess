@@ -1,0 +1,24 @@
+# Taprobellelk - Apache rules (XAMPP has mod_rewrite + AllowOverride enabled by default)
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Old static pages -> new PHP pages (so old links and bookmarks keep working)
+RewriteRule ^index\.html$                 index.php        [R=301,NC,L]
+RewriteRule ^Gemstones(-details)?\.html$  gemstones.php    [R=301,NC,L]
+RewriteRule ^Custom_Made\.html$           custom_made.php  [R=301,NC,L]
+RewriteRule ^Cart\.html$                  cart.php         [R=301,NC,L]
+RewriteRule ^Account\.html$               account.php      [R=301,NC,L]
+RewriteRule ^About\.html$                 about.php        [R=301,NC,L]
+RewriteRule ^Contact\.html$               contact.php      [R=301,NC,L]
+
+# Never serve code/database folders to browsers
+RewriteRule ^(includes|database)/ - [F,L]
+
+# Anything that does not exist -> friendly 404 page
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ 404.php [L]
+</IfModule>
