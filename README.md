@@ -1,14 +1,12 @@
 # Taprobellelk - complete PHP + MySQL website with admin panel
 
 ## Quick start (XAMPP, Windows) - 4 steps
-1. **Replace your old project.** Delete everything inside `C:\xampp\htdocs\Taprobellelk\` (old `.html` files, old `Style.css`),
-   then extract this zip so that `index.php`, `Images`, `admin`, `includes` ... sit **directly inside** that folder
-   (not in a second `Taprobellelk` folder inside it).
-2. Start **Apache** and **MySQL** in the XAMPP Control Panel.
-3. Open http://localhost/phpmyadmin > **Import** > choose `database/taprobellelk.sql` > **Go**.
+1. Extract this zip so that `index.php`, `Images`, `admin`, `includes` ... sit **directly inside** `C:\xampp\htdocs\Taprobellelk\` (not in a second `Taprobellelk` folder inside it).
+3. Start **Apache** and **MySQL** in the XAMPP Control Panel.
+4. Open http://localhost/phpmyadmin > **Import** > choose `database/taprobellelk.sql` > **Go**.
    *(Already have the database from an earlier version and want to keep your users/orders? Don't import. Instead open the
    `taprobellelk` database > **SQL** tab, paste the contents of `database/upgrade_v4.sql` > Go.)*
-4. Open **http://localhost/Taprobellelk/check.php**. It tests PHP, MySQL, tables, images, admin account and payment settings
+5. Open **http://localhost/Taprobellelk/check.php**. It tests PHP, MySQL, tables, images, admin account and payment settings
    and tells you exactly how to fix anything red. When all green, open http://localhost/Taprobellelk/
 
 The site URL is detected automatically, so the folder can have any name.
